@@ -9,8 +9,8 @@ logging.basicConfig(
     filename="logfile.log"
 )
 
-CleverChoice = (input("Choose the best option: 1. Split, 2. Multiplication, \
-3. Addition, 4. Subtraction: \n"))
+clever_choice = input("Choose the best option: 1. Split, 2. Multiplication, \
+3. Addition, 4. Subtraction: \n")
 
 def isfloat(num):
     try:
@@ -19,79 +19,61 @@ def isfloat(num):
     except ValueError:
         return False
 
-def Split (a, b):
-    logging.debug(f'Splitting {a}, {b}')
+def divide (a, b):
+    logging.debug(f'Dividing {a}, {b}')
     result = float(str(a)) / float(str(b))
     logging.debug(f'Result: {result}')
     return result 
 
-def Substraction (a, b):
+def substraction (a, b):
     logging.debug(f'Substracting {a}, {b}')
     result = float(str(a)) - float(str(b))
     logging.debug(f'Result: {result}')
     return result 
 
-def Multiplication (a, b, c):
-    logging.debug(f'Multiplication {a}, {b}, {c}')
-    result = float(str(a)) * float(str(b)) * float(str(c))
+
+def multiplication(numbers):
+    logging.debug(f'Multiplication {numbers}')
+    result = 1
+    for num in numbers:
+        result *= float(str(num))
     logging.debug(f'Result: {result}')
     return result
 
-def Addition (a, b, c):
-    logging.debug(f'Addition {a}, {b}')
-    result = float(str(a)) + float(str(b)) + float(str(c))
+def addition (numbers):
+    logging.debug(f'Addition {numbers}')
+    result = 1
+    for num in numbers:
+        result += float(str(num))
     logging.debug(f'Result: {result}')
     return result 
     
-if CleverChoice == '1':
+if clever_choice == '1':
     a = (input ('First number: '))
     logging.debug(f'Value is float: {isfloat(a)}')
     b = (input ('Second number: '))
     logging.debug(f'Value is float: {isfloat(b)}')
-    print (Split(a, b))
+    print (divide(a, b))
 
 
     
-if CleverChoice == '2':
-    MoreMultiplication = (input ('Do you want to muliply three numbers? y/n \n'))
-    if MoreMultiplication == 'y':
-        a = (input ('First number: '))
-        logging.debug(f'Value is float: {isfloat(a)}')
-        b = (input ('Second nubmer: '))
-        logging.debug(f'Value is float: {isfloat(b)}')
-        c = (input ('Third number: '))
-        logging.debug(f'Value is float: {isfloat(c)}')
-        print (Multiplication(a, b, c))
-    if MoreMultiplication == 'n':
-        a = (input ('First number: '))
-        logging.debug(f'Value is float: {isfloat(a)}')
-        b = (input ('Second nubmer: '))
-        logging.debug(f'Value is float: {isfloat(b)}')
-        print (Multiplication(a, b, c = 1))
+if clever_choice == '2':
+    user_input = input("Enter numbers separated by commas: ")
+    numbers = user_input.split(',')
+    print(multiplication(numbers))
 
-if CleverChoice == '3':
-    MoreAdds = (input ('Do you want to add three numbers? y/n \n'))
-    if MoreAdds == 'y':
-        a = (input ('First number: '))
-        logging.debug(f'Value is float: {isfloat(a)}')
-        b = (input ('Second nubmer: '))
-        logging.debug(f'Value is float: {isfloat(b)}')
-        c = (input ('Third number: '))
-        logging.debug(f'Value is float: {isfloat(c)}')
-        print (Addition(a, b, c))
-    if MoreAdds == 'n':
-        a = (input ('First number: '))
-        logging.debug(f'Value is float: {isfloat(a)}')
-        b = (input ('Second nubmer: '))
-        logging.debug(f'Value is float: {isfloat(b)}')
-        print (Addition(a, b, c = 0))
 
-if CleverChoice == '4':
+if clever_choice == '3':
+    user_input = input("Enter numbers separated by commas: ")
+    numbers = user_input.split(',')
+    print(addition(numbers))
+
+if clever_choice == '4':
     a = (input ('First number: '))
     logging.debug(f'Value is float: {isfloat(a)}')
     b = (input ('Second number: '))
     logging.debug(f'Value is float: {isfloat(b)}')
-    print (Substraction(a, b))
+    print (substraction(a, b))
 
 
 
