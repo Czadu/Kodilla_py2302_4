@@ -76,23 +76,5 @@ if clever_choice == '4':
     print (substraction(a, b))
 
 
-
-
-
-
-
-
-
-
-
     
-
-"""
-if __name__ == "__main__":
-    logging.debug("The program was called with this parameters %s" % sys.argv[1:])
-    logging.debug("First parameter is %s" % sys.argv[1])
-    age = int(sys.argv[1])
-    print_maturity(age)
-
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s', filename="logfile.log")
-"""
+    
